@@ -6,11 +6,11 @@ Given an array of positive or negative integers
 
 I= [i1,..,in]
 
-you have to produce a sorted array P of the form
+you have to produce a sorted array **P** of the form
+ 
+**p**, sum of all **ij** of **I** for which **p** is a _prime factor_ (p positive) of **ij** ...
 
-[ [p, sum of all ij of I for which p is a prime factor (p positive) of ij] ...]
-
-P will be sorted by increasing order of the prime numbers. The final result has to be given as a string in Java, C#, C, C++ and as an array of arrays in other languages.
+**P** will be sorted by increasing order of the prime numbers. The final result has to be given as a string in Java, C#, C, C++ and as an array of arrays in other languages.
 
 Example:
 ```
