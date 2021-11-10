@@ -1,4 +1,4 @@
-module github.com/creepitall/codewars/kata4_1
+module github.com/creepitall/codewars
 
 go 1.17
 

@@ -7,22 +7,22 @@ import (
 )
 
 type equal struct {
-	word string
-	exp  string
+	vrb string
+	exp string
 }
 
 var equalExample = []equal{
-	{word: "din", exp: "((("},
-	{word: "recede", exp: "()()()"},
-	{word: "(( @", exp: "))(("},
-	{word: "Success", exp: ")())())"},
+	{vrb: "din", exp: "((("},
+	{vrb: "recede", exp: "()()()"},
+	{vrb: "(( @", exp: "))(("},
+	{vrb: "Success", exp: ")())())"},
 }
 
 func TestMyCodeBaby(t *testing.T) {
 	var act string
 
 	for _, eq := range equalExample {
-		act = DuplicateEncode(eq.word)
+		act = DuplicateEncode(eq.vrb)
 		assert.Equal(t, eq.exp, act)
 	}
 }
