@@ -1,14 +1,10 @@
 package kata5_1
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func ConvertFracts(a [][]int) (str string) {
-	minimap := make(map[int]int)
-	var i int = 1
-	var nok int
-	var exit bool
-
-	newA := make([][]int, 0)
 	for _, dopel := range a {
 		var a, b int
 		a = dopel[0]
@@ -26,13 +22,18 @@ func ConvertFracts(a [][]int) (str string) {
 			del = a
 		}
 
-		newA = append(newA, []int{dopel[0]/del, dopel[1]/del})
+		dopel[0] = dopel[0]/del
+		dopel[1] = dopel[1]/del
 	}
 
+	minimap := make(map[int]int)
+	var i int = 1
+	var nok int
+	var exit bool
 	for !exit {
-			for _, dopel := range newA {
-				value := dopel[1]
-				minimap[i*value] ++
+		for _, dopel := range a {
+			value := dopel[1]
+			minimap[i*value] ++
 
 			if minimap[i*value] == len(a){
 				exit = true
@@ -43,7 +44,7 @@ func ConvertFracts(a [][]int) (str string) {
 		i++
 	}
 
-	for _, vl := range newA {
+	for _, vl := range a {
 		str += fmt.Sprintf("(%v,%v)", nok/vl[1]*vl[0], nok)
 	}
 
